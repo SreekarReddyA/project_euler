@@ -47,3 +47,15 @@ def string_sum(str_a, str_b):
         sums_array.insert(0, str(carry))
     
     return ''.join(sums_array)
+
+def get_all_divisors(n):
+    divisors = [1]
+    upper_bound = n
+    i = 2
+    while i < upper_bound:
+        if n % i == 0:
+            divisors.append(i)
+            divisors.append(n//i)
+            upper_bound = n // i
+        i += 1
+    return divisors

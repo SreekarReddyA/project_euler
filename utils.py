@@ -59,3 +59,16 @@ def get_all_divisors(n):
             upper_bound = n // i
         i += 1
     return divisors
+
+def permutations(lst):
+    p_array = []
+    
+    def permute(s, cp=''):
+        if len(s) == 0:
+            p_array.append(cp)
+            return
+        for i in range(len(s)):
+            permute(s[:i] + s[i+1:], cp + s[i])
+
+    permute(lst)
+    return p_array
